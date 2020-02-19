@@ -1,0 +1,26 @@
+
+h1, .output, footer{
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+.output{
+    flex: 1;
+    width: 95%;
+    min-width: 350px;
+    font-size: 1em;
+    margin-top: 5em;
+    overflow-x: hidden;
+    border-left: black solid 1px;
+    padding-left: 1em ;
+}
+.output p{
+    margin-bottom: 2em;
+    text-align: left;
+}
+label, button{
+    font-size: 2em;
+}
+input{
+    font-size: 1em;
+}

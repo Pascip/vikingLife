@@ -1,0 +1,53 @@
+body{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+}
+#app{
+    width: 95%;
+    max-width: 1000px;
+    height: 0;
+    flex: 1;
+}
+h1{
+    font-size: 6em;
+}
+h1, h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.translations{
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+.translations *{
+    width: 45%;
+}
+.translations p{
+    border-right: 1px solid black;
+    overflow-x: hidden;
+}
+textarea, p{
+    flex: 1;
+    text-align: left;
+    padding: 1em;
+}
+textarea{
+    resize: none;
+}
+button{
+    margin: 0.5em 0;
+    font-size: 1.5em;
+}
+footer{
+    margin-top: 1em;
+    height: 1em;
+}

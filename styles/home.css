@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(var(--vh, 1vh) * 100);
+}
+h1, p, footer{
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+p{
+    flex: 1;
+    font-size: 2em;
+    margin-top: 5em;
+}

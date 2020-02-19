@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viking Translator</title>
+    <link rel="stylesheet" href="../styles/main.css" type="text/css">
+    <link rel="stylesheet" href="../styles/translator.css" type="text/css">
+    <script src="../scripts/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>The old norse translator</h1>
+        <h2>speak like a legit viking</h2>
+        <div class="translations">
+            <textarea v-model="inputText"></textarea>
+            <p>{{translatedText}}</p>
+        </div>
+        <button v-on:click="translate">translate</button>
+    </div>
+    <footer>This project was made by a CS student from Switzerland. Feel free to <a href="github.com">contribute?</a></footer>
+</body>
+    <script src="../scripts/mainLogic.js"></script>
+</html>
