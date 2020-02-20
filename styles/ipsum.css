@@ -24,3 +24,15 @@ label, button{
 input{
     font-size: 1em;
 }
+
+@media only screen and (max-width: 700px) {
+    h1 {
+        font-size: 4em;
+    }
+    label,button{
+        font-size: 1.5em;
+    }
+    footer{
+        font-size: 0.5em;
+    }
+}
