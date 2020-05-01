@@ -5,6 +5,9 @@ h1, .output, footer{
     text-align: center;
 }
 .output{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
     flex: 1;
     width: 95%;
     min-width: 350px;

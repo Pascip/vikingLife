@@ -11,9 +11,10 @@
 <body>
     <div id="app">
         <h1>Viking Ipsum</h1>
-        <label>How many paragraphs? <input v-model="paragraphAmount" type="number" min="1" max="20"></label>
+        <label>How many paragraphs? <input v-model="paragraphAmount" type="number" min="1" max="50"></label>
         <button v-on:click="getParagraphs">Generate</button>
         <div class="output">
+            <img src="../media/loading.svg" class="loader" v-bind:class="{ activeLoader: isLoading }">
             <p v-for="x in output">{{ x }}</p>
         </div>
         <footer>This project was made by a CS student from Switzerland. Feel free to <a href="https://github.com/Pascip/vikingLife">contribute</a>?</footer>

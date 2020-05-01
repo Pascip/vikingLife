@@ -5,9 +5,10 @@ let app = new Vue({
     data: {
         name: 'World',
         libName: 'Vue.js',
-        inputText: 'your text',
+        inputText: '',
         translatedText: '',
         paragraphAmount: '1',
+        isLoading: false,
         output: [ ]
     },
     methods: {
@@ -18,17 +19,19 @@ let app = new Vue({
             this.translatedText = step.split('Y').join('Ü');
         },
         getParagraphs: function () {
-            if(this.paragraphAmount < 0 || this.paragraphAmount > 20){
+            this.isLoading = true;
+            if(this.paragraphAmount < 0 || this.paragraphAmount > 50){
                 this.paragraphAmount = 1;
             }
             let url = "https://baconipsum.com/api/?type=all-meat&paras="+ this.paragraphAmount + "&start-with-lorem=1";
+            //let url = 'https://cors-anywhere.herokuapp.com/' + "https://makesum.com/libraries/generate_ipsum/99/" + this.paragraphAmount + "/0";
             fetch(url)
                 .then((response) => {
                     return response.json();
                 })
                 .then((myJson) => {
                     let rawOutput ="";
-                    console.log(myJson);
+                    //console.log(myJson);
                     for(let i = 0; i < this.paragraphAmount; i++){
                         let step = myJson[i].split(/[aeiouäöü]+/).join('ö');
                         step = step.split(/[AEIOUÄÖÜ]+/).join('Ö');
@@ -36,10 +39,8 @@ let app = new Vue({
                         myJson[i] = step.split('Y').join('Ü');
                     }
                     this.output = myJson;
-
-                }).catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"));
-
-
+                    this.isLoading = false;
+                }).catch(() => this.isLoading = false);
 
         }
     }
